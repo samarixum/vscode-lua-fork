@@ -1,1 +1,3 @@
 # lua-language-server
+
+TODO: add documentation because apparently nobody does that anymore...
