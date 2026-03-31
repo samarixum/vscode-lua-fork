@@ -216,7 +216,7 @@
     "config.runtime.unicodeName": "Se permiten los caracteres unicode en los nombres.",
     "config.runtime.version": "Versión de Lua que se ejecuta.",
     "config.runtime.version.Lua 5.1": "TODO: Needs documentation",
-    "config.runtime.version.Lua 5.2": "TODO: Needs documentation",
+    "config.runtime.version.Moonsharp 2.0.0.0": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.3": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.4": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.5": "TODO: Needs documentation",

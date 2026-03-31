@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"description": "fork of sumneko lua https://github.com/LuaLS/lua-language-server, for the Remake Engine (moonsharp) lua development",
 	"displayName": "Lua",
-	"version": "3.17.3-B",
+	"version": "3.17.4-B",
 	"engines": {
 		"vscode": "^1.86.0"
 	},
@@ -3087,10 +3087,10 @@
 					"type": "boolean"
 				},
 				"Lua.runtime.version": {
-					"default": "Lua 5.4",
+					"default": "Moonsharp 2.0.0.0",
 					"enum": [
 						"Lua 5.1",
-						"Lua 5.2",
+						"Moonsharp 2.0.0.0",
 						"Lua 5.3",
 						"Lua 5.4",
 						"Lua 5.5",
@@ -3099,7 +3099,7 @@
 					"markdownDescription": "%config.runtime.version%",
 					"markdownEnumDescriptions": [
 						"%config.runtime.version.Lua 5.1%",
-						"%config.runtime.version.Lua 5.2%",
+						"%config.runtime.version.Moonsharp 2.0.0.0%",
 						"%config.runtime.version.Lua 5.3%",
 						"%config.runtime.version.Lua 5.4%",
 						"%config.runtime.version.Lua 5.5%",

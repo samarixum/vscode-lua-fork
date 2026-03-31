@@ -3267,7 +3267,7 @@
             "default": "Lua 5.4",
             "enum": [
                 "Lua 5.1",
-                "Lua 5.2",
+                "Moonsharp 2.0.0.0",
                 "Lua 5.3",
                 "Lua 5.4",
                 "Lua 5.5",

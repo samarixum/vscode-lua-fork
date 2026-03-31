@@ -216,7 +216,7 @@
     "config.runtime.unicodeName": "Allows Unicode characters in name.",
     "config.runtime.version": "Lua runtime version.",
     "config.runtime.version.Lua 5.1": "TODO: Needs documentation",
-    "config.runtime.version.Lua 5.2": "TODO: Needs documentation",
+    "config.runtime.version.Moonsharp 2.0.0.0": "moonsharp is a Lua interpreter written in C#. It is compatible with Moonsharp 2.0.0.0, but does not support some features of Moonsharp 2.0.0.0, such as `goto` and bitwise operators. It also has some of its own features, such as support for coroutines on Unity's main thread.",
     "config.runtime.version.Lua 5.3": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.4": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.5": "TODO: Needs documentation",

@@ -1,1 +1,1 @@
-# lua-VSCode
+# lua-language-server

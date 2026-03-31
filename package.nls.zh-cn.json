@@ -216,7 +216,7 @@
     "config.runtime.unicodeName": "允许在名字中使用 Unicode 字符。",
     "config.runtime.version": "Lua运行版本。",
     "config.runtime.version.Lua 5.1": "TODO: Needs documentation",
-    "config.runtime.version.Lua 5.2": "TODO: Needs documentation",
+    "config.runtime.version.Moonsharp 2.0.0.0": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.3": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.4": "TODO: Needs documentation",
     "config.runtime.version.Lua 5.5": "TODO: Needs documentation",
