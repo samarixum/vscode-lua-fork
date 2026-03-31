@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"description": "fork of sumneko lua https://github.com/LuaLS/lua-language-server, for the Remake Engine (moonsharp) lua development",
 	"displayName": "Lua",
-	"version": "3.17.5-B",
+	"version": "3.17.6-B",
 	"engines": {
 		"vscode": "^1.86.0"
 	},
@@ -15,7 +15,7 @@
 		"Remake Engine",
 		"moonsharp"
 	],
-	"main": "./client/out/src/extension",
+	"main": "./submodules/client/out/src/extension",
 
 	"publisher": "yggdrasil-au",
 	"repository": {

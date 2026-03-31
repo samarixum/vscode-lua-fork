@@ -1,0 +1,413 @@
+PS A:\RemakeEngine\Main\Extension> .\build.ps1
+--- Initializing Submodules and Building Server ---
+Building luamake...
+
+A:\RemakeEngine\Main\Extension\submodules\server\submodules\luamake>ninja -f build\msvc\compile.ninja  
+ninja: no work to do.
+Starting build in current session...
+Cleaning... 123 files.
+[77/125] Compile C   build/obj/lpeglabel/lplcap.obj
+submodules/lpeglabel/lplcap.c(302): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+[83/125] Compile C   build/obj/lpeglabel/lpltree.obj
+submodules/lpeglabel/lpltree.c(59): warning C4244: '=': conversion from 'lua_Number' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(67): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(71): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(175): warning C4244: '=': conversion from 'lua_Unsigned' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(194): warning C4244: 'return': conversion from 'lua_Unsigned' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(351): warning C4244: 'return': conversion from 'lua_Unsigned' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(460): warning C4267: 'function': conversion from 'size_t' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(461): warning C4267: 'function': conversion from 'size_t' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(466): warning C4244: 'initializing': conversion from 'lua_Integer' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(843): warning C4244: 'initializing': conversion from 'lua_Integer' to 'int', possible loss of data
+submodules/lpeglabel/lpltree.c(1160): warning C4244: 'initializing': conversion from 'lua_Unsigned' to 'int', possible loss of data
+[85/125] Compile C   build/obj/lpeglabel/lplvm.obj
+submodules/lpeglabel/lplvm.c(114): warning C4244: '=': conversion from 'lua_Integer' to 'int', possible loss of data
+submodules/lpeglabel/lplvm.c(111): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+submodules/lpeglabel/lplvm.c(149): warning C4244: 'return': conversion from 'lua_Integer' to 'int', possible loss of data
+44: 'function': conversion from '__int64' to 'int', possible loss of data
+submodules/lpeglabel/lplvm.c(466): warning C4244: '=': conversion from '__int64' to 'byte', possible loss of data     
+[120/125] Link    Exe build/bin/bootstrap.exe
+   Creating library build/obj/bootstrap.lib and object build/obj/bootstrap.exp
+Generating code
+Finished generating code
+[122/125] Link    Exe build/bin/lua-language-server.exe
+   Creating library build\bin\lua-language-server.lib and object build\bin\lua-language-server.exp
+Generating code
+Finished generating code
+[122/125] Run test: submodules/luamake/bee.lua/test/test.lua.OS:        windows 10.0.26200
+Arch:           x86_64
+Compiler:       MSVC 195035725.0
+CRT:            MSVC STL 202508L
+DEBUG:          false
+Lua:            5.5
+.................................................................................................................
+Ran 113 tests in 2.707 seconds, 111 successes, 0 failures, 2 skipped
+OK
+
+[124/125] Run test: test.lua.Loaded files in    table: 000001BD50028F00
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/basic.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/builtin.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/coroutine.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/debug.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/io.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/math.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/os.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/package.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/string.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/table.lua
+file:///a%3A/RemakeEngine/Main/Extension/submodules/server/meta/Lua%205.4%20zh-cn%20utf8/utf8.lua
+===============
+测试[basic]...
+text-merger Large test time:    0.0079999999999999932
+测试[basic]用时[0.008]
+测试[parser_test]...
+测试[ast]...
+测试[ast]用时[0.023]
+测试[grammar]...
+测试[grammar]用时[0.002]
+测试[grammar_check]...
+测试[grammar_check]用时[0.004]
+测试[syntax_check]...
+测试[syntax_check]用时[0.006]
+测试完成
+测试[parser_test]用时[0.035]
+测试[definition]...
+测试[definition]用时[0.080]
+测试[type_inference]...
+测试[type_inference]用时[0.239]
+测试[implementation]...
+测试[implementation]用时[0.002]
+测试[references]...
+测试[references]用时[0.030]
+测试[hover]...
+测试[hover]用时[0.100]
+测试[completion]...
+测试[completion]用时[0.315]
+测试[diagnostics]...
+测试[diagnostics]用时[0.618]
+测试[crossfile]...
+测试[crossfile]用时[0.227]
+测试[highlight]...
+测试[highlight]用时[0.006]
+测试[inlay_hint]...
+测试[inlay_hint]用时[0.007]
+测试[rename]...
+测试[rename]用时[0.012]
+测试[signature]...
+测试[signature]用时[0.042]
+测试[command]...
+测试[command]用时[0.001]
+测试[document_symbol]...
+测试[document_symbol]用时[0.013]
+测试[code_action]...
+测试[code_action]用时[0.010]
+测试[other]...
+测试[other]用时[0.000]
+测试[tclient]...
+Benchmark [performance-jass-common] takes [0.029] sec.
+测试[tclient]用时[10.956]
+测试[full]...
+基准编译测试[vm.txt]单次耗时：0.0210000000(解析：0.0180000000, LuaDoc: 0.0030000000, Noder: 0.0000000000)
+基准诊断测试[vm.txt]单次耗时：0.2154000000
+基准编译测试[largeGlobal.txt]单次耗时：0.2280000000(解析：0.1800000000, LuaDoc: 0.0480000000, Noder: 0.0000000000)
+基准诊断测试[largeGlobal.txt]单次耗时：4.5550000000
+基准编译测试[guide.txt]单次耗时：0.0340000000(解析：0.0260000000, LuaDoc: 0.0080000000, Noder: 0.0000000000)
+基准诊断测试[guide.txt]单次耗时：0.3366666667
+基准编译测试[jass-common.txt]单次耗时：0.1260000000(解析：0.0240000000, LuaDoc: 0.1020000000, Noder: 0.0000000000)
+基准诊断测试[jass-common.txt]单次耗时：2.1260000000
+基准诊断目录：  A:/RemakeEngine/Main/Extension/submodules/server/script
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/SDBMHash.lua        
+诊断文件耗时：  0.607000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/await.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/brave/brave.lua     
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/brave/init.lua      
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/brave/log.lua
+诊断文件耗时：  0.030000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/brave/work.lua
+诊断文件耗时：  0.022000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/check.lua       
+诊断文件耗时：  0.058000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/check_worker.lua
+诊断文件耗时：  0.125000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/doc/export.lua
+诊断文件耗时：  0.043000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/doc/init.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/help.lua        
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/init.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/version.lua     
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/cli/visualize.lua
+诊断文件耗时：  0.112000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/client.lua
+诊断文件耗时：  0.036000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/config/config.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/config/env.lua      
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/config/init.lua     
+诊断文件耗时：  0.019000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/config/loader.lua
+诊断文件耗时：  0.072000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/config/template.lua
+诊断文件耗时：  0.067000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/code-action.lua
+诊断文件耗时：  0.020000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/code-lens.lua  
+诊断文件耗时：  0.016000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/color.lua
+诊断文件耗时：  0.045000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/autoRequire.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/exportDocument.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/getConfig.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/jsonToLua.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/reloadFFIMeta.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/removeSpace.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/setConfig.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/command/solve.lua
+诊断文件耗时：  0.026000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/auto-require.lua
+诊断文件耗时：  0.344000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/completion.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/init.lua
+诊断文件耗时：  0.032000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/keyword.lua
+诊断文件耗时：  0.038000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/postfix.lua
+诊断文件耗时：  0.023000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/definition.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/ambiguity-1.lua
+诊断文件耗时：  0.040000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/assign-type-mismatch.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/await-in-sync.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/cast-local-type.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/cast-type-mismatch.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/circle-doc-class.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/close-non-object.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/code-after-break.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/codestyle-check.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/count-down-loop.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/deprecated.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/different-requires.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/discard-returns.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/doc-field-no-class.lua
+诊断文件耗时：  0.009000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/duplicate-doc-alias.lua
+诊断文件耗时：  0.019000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/duplicate-doc-field.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/duplicate-doc-param.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/duplicate-index.lua
+诊断文件耗时：  0.034000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/duplicate-set-field.lua
+诊断文件耗时：  0.009000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/empty-block.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/global-element.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/global-in-nil-env.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/helper/missing-doc-helper.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/incomplete-signature-doc.lua
+诊断文件耗时：  0.025000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/init.lua
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/inject-field.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/invisible.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/lowercase-global.lua
+诊断文件耗时：  0.018000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-fields.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-global-doc.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-local-export-doc.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-parameter.lua
+诊断文件耗时：  0.031000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-return-value.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/missing-return.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/name-style-check.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/need-check-nil.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/newfield-call.lua
+诊断文件耗时：  0.009000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/newline-call.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/no-unknown.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/not-yieldable.lua
+诊断文件耗时：  0.032000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/param-type-mismatch.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/redefined-local.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/redundant-parameter.lua
+诊断文件耗时：  0.009000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/redundant-return-value.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/redundant-return.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/redundant-value.lua
+诊断文件耗时：  0.041000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/return-type-mismatch.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/spell-check.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/trailing-space.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unbalanced-assignments.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-doc-class.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-doc-name.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-doc-param.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-env-child.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-field.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/undefined-global.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unknown-cast-variable.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unknown-diag-code.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unknown-operator.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unnecessary-assert.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unreachable-code.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unused-function.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unused-label.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unused-local.lua
+诊断文件耗时：  0.029000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/diagnostics/unused-vararg.lua
+诊断文件耗时：  0.040000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/document-symbol.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/find-source.lua
+诊断文件耗时：  0.024000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/fix-indent.lua
+诊断文件耗时：  0.019000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/folding.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/formatting.lua 
+诊断文件耗时：  0.026000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/highlight.lua
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hint.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/args.lua
+诊断文件耗时：  0.085000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/description.lua
+诊断文件耗时：  0.023000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/init.lua
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/label.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/name.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/return.lua
+诊断文件耗时：  0.056000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/hover/table.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/implementation.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/jump-source.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/look-backward.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/matchkey.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/modifyRequirePath.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/rangeformatting.lua
+诊断文件耗时：  0.015000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/reference.lua
+诊断文件耗时：  0.048000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/rename.lua
+诊断文件耗时：  0.112000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/semantic-tokens.lua
+诊断文件耗时：  0.029000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/signature.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/substring.lua  
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/type-definition.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/type-formatting.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/view/psi-select.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/view/psi-view.lua
+诊断文件耗时：  0.021000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/workspace-symbol.lua
+诊断文件耗时：  0.074000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/doctor.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/encoder/ansi.lua    
+诊断文件耗时：  0.016000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/encoder/init.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/encoder/utf16.lua
+诊断文件耗时：  0.016000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/file-uri.lua
+诊断文件耗时：  0.148000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/files.lua
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/filewatch.lua
+诊断文件耗时：  0.067000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/fs-utility.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/gc.lua
+诊断文件耗时：  0.050000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/glob/gitignore.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/glob/glob.lua       
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/glob/init.lua
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/glob/matcher.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/global.d.lua        
+诊断文件耗时：  0.034000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/inspect.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/json-beautify.lua   
+诊断文件耗时：  0.095000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/json-edit.lua
+诊断文件耗时：  0.043000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/json.lua
+诊断文件耗时：  0.031000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/jsonc.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/jsonrpc.lua
+诊断文件耗时：  0.018000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/language.lua
+诊断文件耗时：  0.026000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/lazy-cacher.lua
+诊断文件耗时：  0.057000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/lazytable.lua
+诊断文件耗时：  0.026000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/lclient.lua
+诊断文件耗时：  0.075000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/library.lua
+诊断文件耗时：  0.016000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/linked-table.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/locale-loader.lua   
+诊断文件耗时：  0.046000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/log.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/channel.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/filesystem.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/filewatch.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/select.lua 
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/socket.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/sys.lua    
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/meta/bee/thread.lua 
+诊断文件耗时：  0.387000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/compile.lua
+诊断文件耗时：  0.131000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/guide.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/init.lua     
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/lines.lua    
+诊断文件耗时：  0.197000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/luadoc.lua
+诊断文件耗时：  0.028000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/relabel.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/tokens.lua
+诊断文件耗时：  0.025000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugin.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/astHelper.lua
+诊断文件耗时：  0.013000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/c99.lua
+诊断文件耗时：  0.016000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/cdefines.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/cdriver.lua
+诊断文件耗时：  0.120000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/cpp.lua
+诊断文件耗时：  0.057000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/ctypes.lua
+诊断文件耗时：  0.046000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/typed.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/c-parser/util.lua
+诊断文件耗时：  0.009000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/cdefRerence.lua
+诊断文件耗时：  0.044000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/init.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/ffi/searchCode.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/init.lua    
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/plugins/nodeHelper.lua
+诊断文件耗时：  0.018000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/progress.lua
+诊断文件耗时：  0.026000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/proto/converter.lua
+诊断文件耗时：  0.039000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/proto/define.lua
+诊断文件耗时：  0.028000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/proto/diagnostic.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/proto/init.lua      
+诊断文件耗时：  0.030000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/proto/proto.lua
+诊断文件耗时：  0.023000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/build-meta.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/capability.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/code-lens.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/completion.lua
+诊断文件耗时：  0.106000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/diagnostic.lua
+诊断文件耗时：  0.011000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/formatting.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/init.lua   
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/inlay-hint.lua
+诊断文件耗时：  0.012000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/language-configuration.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/markdown.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/name-style.lua
+诊断文件耗时：  0.258000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/provider.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/semantic-tokens.lua
+诊断文件耗时：  0.006000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/spell.lua  
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/pub/init.lua        
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/pub/pub.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/pub/report.lua      
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/service/init.lua    
+诊断文件耗时：  0.024000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/service/net.lua
+诊断文件耗时：  0.044000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/service/service.lua
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/string-merger.lua
+诊断文件耗时：  0.010000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/text-merger.lua     
+诊断文件耗时：  0.040000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/timer.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/tracy.lua
+诊断文件耗时：  0.122000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/utility.lua
+诊断文件耗时：  0.004000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/version.lua
+诊断文件耗时：  0.508000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/compiler.lua
+诊断文件耗时：  0.017000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/def.lua
+诊断文件耗时：  0.062000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/doc.lua
+诊断文件耗时：  0.008000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/field.lua        
+诊断文件耗时：  0.066000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/function.lua
+诊断文件耗时：  0.049000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/generic.lua
+诊断文件耗时：  0.097000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/global.lua
+诊断文件耗时：  0.111000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/infer.lua
+诊断文件耗时：  0.014000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/init.lua
+诊断文件耗时：  0.003000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/library.lua      
+诊断文件耗时：  0.087000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/node.lua
+诊断文件耗时：  0.117000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/operator.lua
+诊断文件耗时：  0.005000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/precompile.lua   
+诊断文件耗时：  0.040000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/ref.lua
+诊断文件耗时：  0.096000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/sign.lua
+诊断文件耗时：  0.151000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/tracer.lua
+诊断文件耗时：  0.172000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/type.lua
+诊断文件耗时：  0.031000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/value.lua
+诊断文件耗时：  0.076000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/variable.lua
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/visible.lua
+诊断文件耗时：  0.015000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/vm.lua
+诊断文件耗时：  0.007000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/without-check-nil.lua
+诊断文件耗时：  0.002000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/workspace/init.lua  
+诊断文件耗时：  0.032000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/workspace/loading.lua
+诊断文件耗时：  0.079000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/workspace/require-path.lua
+诊断文件耗时：  0.027000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/workspace/scope.lua
+诊断文件耗时：  0.108000        file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/workspace/workspace.lua
+基准全量诊断用时：      8.404
+全量编译耗时：0.050 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/tracer.lua]
+全量编译耗时：0.050 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/semantic-tokens.lua]      
+全量编译耗时：0.054 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/files.lua]
+全量编译耗时：0.058 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/provider/provider.lua]
+全量编译耗时：0.059 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/doc.lua]
+全量编译耗时：0.085 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/type.lua]
+全量编译耗时：0.121 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/vm/compiler.lua]
+全量编译耗时：0.122 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/core/completion/completion.lua]
+全量编译耗时：0.167 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/compile.lua]
+全量编译耗时：0.429 [file:///a%3A/RemakeEngine/Main/Extension/submodules/server/script/parser/luadoc.lua]
+基准全量编译用时：      3.3419999999999987
+诊断任务耗时：0.448 [undefined-field]
+诊断任务耗时：0.473 [redundant-parameter]
+诊断任务耗时：0.543 [no-unknown]
+诊断任务耗时：0.600 [await-in-sync]
+诊断任务耗时：0.608 [different-requires]
+诊断任务耗时：0.623 [not-yieldable]
+诊断任务耗时：0.659 [deprecated]
+诊断任务耗时：1.519 [param-type-mismatch]
+诊断任务耗时：2.643 [invisible]
+诊断任务耗时：3.942 [assign-type-mismatch]
+测试[full]用时[20.989]
+测试[plugins.test]...
+测试[plugins.test]用时[5.621]
+测试[cli.test]...
+测试[cli.test]用时[0.005]
+test finish.
+
+Build completed successfully!
+
+--- Building VS Code Extension Client ---
+Done in 174ms using pnpm v10.33.0
+
+> client@0.0.1 build A:\RemakeEngine\Main\Extension\submodules\client
+> pnpm clean && pnpm exec tsc
+
+
+> client@0.0.1 clean A:\RemakeEngine\Main\Extension\submodules\client
+> node -e "fs.rmSync('out', { recursive: true, force: true })"
+
+
+--- Preparing Distribution Folder ---
+Copying files to publish/test...
+
+--- Packaging VSIX ---
+ ERROR  Extension entrypoint(s) missing. Make sure these files exist and aren't ignored by '.vscodeignore':        ]
+Successfully created lua-3.17.5-B.vsix

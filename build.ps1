@@ -5,41 +5,50 @@ Write-Host "--- Initializing Submodules and Building Server ---" -ForegroundColo
 $serverPath = Join-Path $PSScriptRoot "submodules/server"
 
 if (Test-Path $serverPath) {
-    # Use Push-Location / Pop-Location to ensure we always return to root
-    Push-Location "submodules/server/submodules/luamake"
+    # 1. Build luamake (Dependency)
+    # Using Push/Pop to ensure we don't lose our place in the folder structure
+    Push-Location (Join-Path $serverPath "submodules/luamake")
+
     if (Test-Path "compile\build.bat") {
+        Write-Host "Building luamake..." -ForegroundColor Gray
         cmd /c "compile\build.bat"
     } else {
         Write-Warning "luamake build script not found. Skipping submodule initialization."
     }
     Pop-Location
 
-    $luamakePath = ".\submodules\server\submodules\luamake\luamake.exe"
-    $buildArgs = if ($args.Count -eq 0) { "rebuild" } else { "rebuild --platform $($args[0])" }
+    # 2. Configure Build Arguments
+    $luamakeExe = Join-Path $serverPath "submodules/luamake/luamake.exe"
 
-    Write-Host "Launching build in new window..." -ForegroundColor Yellow
+    # Ensure arguments are a clean array of strings
+    $buildArgs = if ($args.Count -eq 0) {
+        @("rebuild")
+    } else {
+        @("rebuild", "--platform", "$($args[0])")
+    }
 
-    $scriptBlock = @"
-        Set-Location -Path 'submodules/server'
-        if (Test-Path 'submodules\luamake\luamake.exe') {
-            & '.\submodules\luamake\luamake.exe' $buildArgs
-            if (`$LASTEXITCODE -ne 0) {
-                Write-Host "`nBuild failed! Press any key to close this window..." -ForegroundColor Red
-                pause
-                exit `$LASTEXITCODE
-            }
-        } else {
-            Write-Error "luamake.exe not found in server directory."
-            pause
-            exit 1
+    # 3. Execute Build in the Current Window
+    if (Test-Path $luamakeExe) {
+        Write-Host "Starting build in current session..." -ForegroundColor Yellow
+
+        Push-Location $serverPath
+
+        # Use --% (stop-parsing symbol) if the call operator still struggles,
+        # but a clean array usually fixes the "r" vs "rebuild" issue.
+        & $luamakeExe $buildArgs
+
+        $lastExit = $LASTEXITCODE
+        Pop-Location
+
+        if ($lastExit -ne 0) {
+            Write-Error "Build failed with Exit Code: $lastExit"
+            exit $lastExit
         }
-"@
 
-    $process = Start-Process powershell -ArgumentList "-NoProfile", "-Command", $scriptBlock -Wait -PassThru
-
-    if ($process.ExitCode -ne 0) {
-        Write-Error "Build failed in the external window with Exit Code: $($process.ExitCode)"
-        exit $process.ExitCode
+        Write-Host "Build completed successfully!" -ForegroundColor Green
+    } else {
+        Write-Error "luamake.exe not found at $luamakeExe"
+        exit 1
     }
 } else {
     Write-Warning "Server directory not found at $serverPath. Skipping server build."
