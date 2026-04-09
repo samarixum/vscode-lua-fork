@@ -182,6 +182,45 @@ class LuaClient extends Disposable {
             },
             middleware: {
                 provideHover: async () => undefined,
+                workspace: {
+                    configuration: async (params) => {
+                        const results: LSPAny[] = [];
+
+                        for (const item of params.items) {
+                            const resource = item.scopeUri === undefined
+                                ? undefined
+                                : item.scopeUri === null
+                                    ? null
+                                    : vscode.Uri.parse(item.scopeUri);
+                            const section = item.section ?? undefined;
+
+                            if (!section) {
+                                const config = Workspace.getConfiguration(undefined, resource);
+                                const values: Record<string, unknown> = {};
+
+                                for (const key of Object.keys(config)) {
+                                    if (config.has(key)) {
+                                        values[key] = config.get(key);
+                                    }
+                                }
+
+                                results.push(values);
+                                continue;
+                            }
+
+                            const sectionIndex = section.lastIndexOf('.');
+                            if (sectionIndex === -1) {
+                                results.push(Workspace.getConfiguration(undefined, resource).get(section));
+                                continue;
+                            }
+
+                            const config = Workspace.getConfiguration(section.slice(0, sectionIndex), resource);
+                            results.push(config.get(section.slice(sectionIndex + 1)));
+                        }
+
+                        return results;
+                    },
+                },
             }
         };
 
