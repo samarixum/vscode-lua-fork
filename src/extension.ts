@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import * as languageserver from './languageserver';
+import * as languageserver from './languageserver.ts';
 
 // Create a global output channel for BetterGit logging
 export const outputChannel = vscode.window.createOutputChannel("Lua (moonsharp)", { log: true });

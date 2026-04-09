@@ -4,7 +4,7 @@
 	"displayName": "Lua (moonsharp)",
 
     "description": "Simplified, non-destructive version control.",
-	"version": "3.19.0-B",
+	"version": "3.19.1-B",
     "engines": {
         "vscode": "^1.110.0"
     },
@@ -13,11 +13,11 @@
     "main": "dist/extension.js",
     "repository": {},
     "scripts": {
-		"prod": "pnpm build && pnpm bundle",
-        "build": "pnpm clean && pnpm exec tsc",
-		"clean": "rimraf dist dist",
-		"lint": "pnpm exec eslint src/",
-		"bundle": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify"
+		"vscode:prepublish": "deno task build",
+		"prod": "deno task prod",
+        "build": "deno task build",
+		"lint": "deno task lint",
+		"fmt": "deno task fmt"
     },
 
 	"keywords": [
@@ -3302,12 +3302,6 @@
     "devDependencies": {
         "@types/node": "25.5.2",
         "@types/vscode": "^1.110.0",
-        "@vscode/vsce": "3.7.1",
-        "typescript": "6.0.2",
-		"@eslint/js": "10.0.1",
-		"esbuild": "0.28.0",
-		"eslint": "10.2.0",
-		"rimraf": "6.1.3",
-		"typescript-eslint": "8.58.1"
+		"@vscode/vsce": "3.7.1"
     }
 }

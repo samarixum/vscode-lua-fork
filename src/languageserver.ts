@@ -1,6 +1,6 @@
-import * as path from 'path';
-import * as os from 'os';
-import * as fs from 'fs';
+import * as path from 'node:path';
+import * as os from 'node:os';
+import * as fs from 'node:fs';
 import * as vscode from 'vscode';
 import * as LSP from 'vscode-languageserver-protocol';
 import {
@@ -22,7 +22,7 @@ import {
     TransportKind,
 } from 'vscode-languageclient/node.js';
 
-import { log, debug, outputChannel } from './extension';
+import { log, debug, outputChannel } from './extension.ts';
 
 export let defaultClient: LuaClient | null = null;
 
@@ -258,11 +258,11 @@ class LuaClient extends Disposable {
                 break;
             case "linux":
                 command = this.context.asAbsolutePath(path.join("server", binDir || "bin-Linux", "lua-language-server"));
-                await fs.promises.chmod(command, "777");
+                await fs.promises.chmod(command, 0o777);
                 break;
             case "darwin":
                 command = this.context.asAbsolutePath(path.join("server", binDir || "bin-macOS", "lua-language-server"));
-                await fs.promises.chmod(command, "777");
+                await fs.promises.chmod(command, 0o777);
                 break;
             default:
                 throw new Error(`Unsupported operating system "${platform}"!`);
