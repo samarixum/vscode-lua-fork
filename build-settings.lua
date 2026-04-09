@@ -1,9 +1,10 @@
 --[[----------------------------------------------------------------------------
-    VS Code Configuration & NLS Generator
+    VS Code Configuration, NLS, and Manifest Generator
     ----------------------------------------------------------------------------
     PURPOSE:
-    Automates the generation of JSON Schemas and Package NLS (Localization)
-    files by merging base configurations with language-specific strings.
+    Automates the generation of JSON Schemas, Package NLS (Localization)
+    files, and the extension manifest by merging base configurations with
+    language-specific strings.
 
     FLOW:
     1. Scans 'submodules/server/locale/' for supported languages.
@@ -42,7 +43,11 @@ local lloader       = require 'locale-loader'
 local diagd         = require 'proto.diagnostic'
 local util          = require 'utility'
 
--- ... [addSplited and copyWithNLS functions remain unchanged] ...
+local packagePath = 'submodules/client/package.json'
+local packageEncodeOption = {
+    newline = '\r\n',
+    indent  = '\t',
+}
 
 local function addSplited(t, key, value)
     t[key] = value
@@ -99,6 +104,7 @@ local function mergeDiagnosticGroupLocale(locale)
         locale[key] = desc
     end
 end
+
 
 print("Starting schema and NLS generation...")
 print("--------------------------------------")

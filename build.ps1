@@ -1,3 +1,9 @@
+param(
+    [string]$Mode = ""
+)
+
+$isAuto = ($Mode -eq "auto")
+
 # 1. Initialize Submodules and Build Server
 Write-Host "--- Initializing Submodules and Building Server ---" -ForegroundColor Cyan
 
@@ -7,21 +13,26 @@ $serverExe = Join-Path $serverPath "bin/lua-language-server.exe"
 $buildServer = $true
 
 if (Test-Path $serverExe) {
-    Write-Host "Existing server executable found at $serverExe." -ForegroundColor Yellow
+    if ($isAuto) {
+        Write-Host "Auto mode detected: dont rebuilding server." -ForegroundColor Yellow
+        $buildServer = $false
+    } else {
+        Write-Host "Existing server executable found at $serverExe." -ForegroundColor Yellow
 
-    $choice = Read-Host "Rebuild the server? [r]ebuild / [s]kip (default: skip)"
-    if ([string]::IsNullOrWhiteSpace($choice)) {
-        $choice = "s"
-    }
+        $choice = Read-Host "Rebuild the server? [r]ebuild / [s]kip (default: skip)"
+        if ([string]::IsNullOrWhiteSpace($choice)) {
+            $choice = "s"
+        }
 
-    switch ($choice.Trim().ToLowerInvariant()) {
-        "r" { $buildServer = $true }
-        "rebuild" { $buildServer = $true }
-        "s" { $buildServer = $false }
-        "skip" { $buildServer = $false }
-        default {
-            Write-Warning "Unrecognized choice '$choice'. Skipping server rebuild."
-            $buildServer = $false
+        switch ($choice.Trim().ToLowerInvariant()) {
+            "r" { $buildServer = $true }
+            "rebuild" { $buildServer = $true }
+            "s" { $buildServer = $false }
+            "skip" { $buildServer = $false }
+            default {
+                Write-Warning "Unrecognized choice '$choice'. Skipping server rebuild."
+                $buildServer = $false
+            }
         }
     }
 }
@@ -85,7 +96,7 @@ Write-Host "`n--- Building VS Code Extension Client ---" -ForegroundColor Cyan
 # Updated path to submodules/client
 Push-Location "submodules/client"
 pnpm install
-pnpm run build
+pnpm run prod
 Pop-Location
 
 
@@ -131,8 +142,11 @@ $itemsToCopy = @{
     "submodules/client/LICENSE"             = "LICENSE"
     "submodules/client/package.json"        = "package.json"
     "submodules/client/README.md"           = "README.md"
-    "submodules/client/images/logo.png"     = "images/logo.png"
+    "submodules/client/resources"           = "resources"
     "submodules/client/dist"                = "dist"
+
+
+    "setting" = "setting"
 
     # Server Structure
     "submodules/server/bin"                 = "server/bin"
@@ -191,12 +205,16 @@ foreach ($item in $cleanupList) {
 }
 
 # 7. Package VSIX
-Write-Host "`n--- Packaging VSIX ---" -ForegroundColor Cyan
-if (Get-Command vsce -ErrorAction SilentlyContinue) {
-    $vsixName = "lua-$version.vsix"
-    Push-Location $publishDir
-    vsce package -o "../../$vsixName"
-    Pop-Location
-    Write-Host "Successfully created $vsixName" -ForegroundColor Green
+if (-not $isAuto) {
+    Write-Host "`n--- Packaging VSIX ---" -ForegroundColor Cyan
+    if (Get-Command vsce -ErrorAction SilentlyContinue) {
+        $vsixName = "lua-$version.vsix"
+        Push-Location $publishDir
+        vsce package -o "../../$vsixName"
+        Pop-Location
+        Write-Host "Successfully created $vsixName" -ForegroundColor Green
+    }
+} else {
+    Write-Host "`n--- Skipping VSIX Packaging (Auto Mode) ---" -ForegroundColor Yellow
 }
 

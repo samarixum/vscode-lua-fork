@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "build-extension",
+			"label": "build-extension1",
 			"type": "shell",
 			"command": "pnpm",
 			"args": [
@@ -13,6 +13,31 @@
 				"cwd": "${workspaceFolder}/submodules/client"
 			},
 			"problemMatcher": []
-		}
-	]
+		},
+		{
+			"label": "build-extension3",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"run",
+				"prod"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/submodules/client"
+			},
+			"problemMatcher": []
+		},
+		{
+            "label": "build-extension2",
+            "type": "shell",
+            "command": "./build.ps1",
+            "args": [
+                "auto"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
 }

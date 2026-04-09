@@ -3,17 +3,45 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run Extension",
+            "name": "Run direct Extension",
             "type": "extensionHost",
             "request": "launch",
             "runtimeExecutable": "${execPath}",
-            "preLaunchTask": "build-extension",
+            "preLaunchTask": "build-extension1",
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}/submodules/client",
                 "--profile=ExtensionDevHost"
             ],
             "outFiles": [
                 "${workspaceFolder}/submodules/client/dist/**/*.js"
+            ]
+        },
+        {
+            "name": "Run packed Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "preLaunchTask": "build-extension3",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/submodules/client",
+                "--profile=ExtensionDevHost"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/submodules/client/dist/**/*.js"
+            ]
+        },
+        {
+            "name": "Run Build.ps1 Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "preLaunchTask": "build-extension2",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/Build/TMP",
+                "--profile=ExtensionDevHost"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/Build/TMP/dist/**/*.js"
             ]
         },
     ]

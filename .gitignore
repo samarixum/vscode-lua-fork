@@ -15,4 +15,4 @@ submodules/
 
 setting/schema.json
 setting/schema*.json
-
+!setting/schema.core.json
