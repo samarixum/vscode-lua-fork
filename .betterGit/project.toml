@@ -13,5 +13,5 @@ isPublic = true
 name = "Fork"
 group = "Mirrors"
 provider = "github"
-branch = "client"
+branch = "master"
 isPublic = true
