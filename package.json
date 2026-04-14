@@ -4,7 +4,7 @@
 	"displayName": "Lua (moonsharp)",
 	"description": "moonsharp language support for development of the RemakeEngine https://github.com/yggdrasil-au/RemakeEngine, forked from sumneko lua https://github.com/LuaLS/vscode-lua",
 
-	"version": "3.19.3-B",
+	"version": "3.19.4-B",
     "engines": {
         "vscode": "^1.110.0"
     },
@@ -15,6 +15,7 @@
     "scripts": {
 		"vscode:prepublish": "deno task build",
 		"prod": "deno task prod",
+		"check": "deno check src/",
         "build": "deno task build",
 		"lint": "deno task lint",
 		"fmt": "deno task fmt"
