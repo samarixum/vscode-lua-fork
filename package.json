@@ -4,7 +4,7 @@
 	"displayName": "Lua (moonsharp)",
 	"description": "moonsharp language support for development of the RemakeEngine https://github.com/yggdrasil-au/RemakeEngine, forked from sumneko lua https://github.com/LuaLS/vscode-lua",
 
-	"version": "3.19.5-B",
+	"version": "3.19.6-B",
     "engines": {
         "vscode": "^1.110.0"
     },
@@ -3092,23 +3092,15 @@
 					"type": "boolean"
 				},
 				"Lua.runtime.version": {
-					"default": "Lua 5.4",
+					"default": "Moonsharp 2.0.0.0",
 					"enum": [
-						"Lua 5.1",
 						"Moonsharp 2.0.0.0",
-						"Lua 5.3",
-						"Lua 5.4",
-						"Lua 5.5",
-						"LuaJIT"
+						"Lua 5.5"
 					],
 					"markdownDescription": "%config.runtime.version%",
 					"markdownEnumDescriptions": [
-						"%config.runtime.version.Lua 5.1%",
 						"%config.runtime.version.Moonsharp 2.0.0.0%",
-						"%config.runtime.version.Lua 5.3%",
-						"%config.runtime.version.Lua 5.4%",
-						"%config.runtime.version.Lua 5.5%",
-						"%config.runtime.version.LuaJIT%"
+						"%config.runtime.version.Lua 5.5%"
 					],
 					"scope": "resource",
 					"type": "string"
