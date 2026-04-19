@@ -1,0 +1,27 @@
+{
+	"nodeModulesDir": "auto",
+	"imports": {
+		"vscode-languageclient/node.js": "npm:vscode-languageclient@9.0.1/node.js",
+		"vscode-languageserver-protocol": "npm:vscode-languageserver-protocol@3.17.5"
+	},
+	"tasks": {
+		"build": "deno run --allow-read=. --allow-write=. --allow-run --allow-env npm:esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+		"prod": "deno run --allow-read=. --allow-write=. --allow-run --allow-env npm:esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+		"lint": "deno lint src/",
+		"check": "deno check src/",
+		"fmt": "deno fmt src/",
+		"test:lsp": "deno test --allow-read=../.. --allow-run --allow-env tests/lsp_smoke_test.ts"
+	},
+	"fmt": {
+		"include": ["src/"],
+		"useTabs": true,
+		"lineWidth": 120
+	},
+	"lint": {
+		"include": ["src/"]
+	},
+	"compilerOptions": {
+		"strict": true,
+		"types": ["npm:@types/vscode@1.110.0"]
+	}
+}

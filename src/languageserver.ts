@@ -60,7 +60,7 @@ function getServerExecutableName(
     const names = runtimeVersion === MOONSHARP_RUNTIME_VERSION
         ? SERVER_EXECUTABLES.moonsharp
         : SERVER_EXECUTABLES.standard;
-    return names[platform] ?? names.win32;
+    return names[platform as keyof typeof names] ?? names.win32;
 }
 
 function registerCustomCommands(context: ExtensionContext) {
@@ -524,6 +524,10 @@ class LuaClient extends Disposable {
             return record;
         }
 
+        function toLanguageConfiguration(config: unknown): vscode.LanguageConfiguration {
+            return convertStringsToRegex(config) as vscode.LanguageConfiguration;
+        }
+
         let configuration: Disposable | undefined;
         this.disposables.push(
             this.client.onNotification(
@@ -535,7 +539,7 @@ class LuaClient extends Disposable {
                     configuration?.dispose();
                     configuration = vscode.languages.setLanguageConfiguration(
                         params.id,
-                        convertStringsToRegex(params.configuration),
+                        toLanguageConfiguration(params.configuration),
                     );
                     this.disposables.push(configuration);
                 },

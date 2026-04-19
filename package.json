@@ -4,7 +4,7 @@
 	"displayName": "Lua (moonsharp)",
 	"description": "moonsharp language support for development of the RemakeEngine https://github.com/yggdrasil-au/RemakeEngine, forked from sumneko lua https://github.com/LuaLS/vscode-lua",
 
-	"version": "3.19.7-B",
+	"version": "3.19.8-B",
     "engines": {
         "vscode": "^1.110.0"
     },
@@ -3286,16 +3286,6 @@
 				}
 			}
 		}
-    },
-
-
-	"dependencies": {
-		"vscode-languageclient": "9.0.1",
-		"vscode-languageserver-protocol": "3.17.5"
-	},
-    "devDependencies": {
-        "@types/node": "25.6.0",
-        "@types/vscode": "^1.110.0",
-		"@vscode/vsce": "3.8.0"
     }
+
 }
